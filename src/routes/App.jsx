@@ -1,7 +1,13 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import axios from "axios";
 import { useCookies } from "react-cookie";
-import { DetailMovie, Homepage, ListFavorites, ListMovies } from "../pages";
+import {
+  DetailMovie,
+  Homepage,
+  ListFavorites,
+  ListMovies,
+  Login,
+} from "../pages";
 
 function App() {
   // const [cookie, , removeCookie] = useCookies(["token"]);
@@ -23,6 +29,10 @@ function App() {
     {
       path: "/favorites",
       element: <ListFavorites />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 

@@ -1,13 +1,23 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilterMovies, fetchMovies } from "../../service/movieSlice";
-import { Header, ImageCard } from "../../components/Molekul";
+import { Header, ImageCard, ModalLogin } from "../../components/Molekul";
 import { Button } from "../../components/Atom";
 
 const ListMovies = () => {
   const dispatch = useDispatch();
   const { movies, loading, error } = useSelector((state) => state.movies);
   const [searchQuery, setSearchQuery] = useState("");
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     dispatch(fetchMovies());
