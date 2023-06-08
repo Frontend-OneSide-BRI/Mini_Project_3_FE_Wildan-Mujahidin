@@ -4,6 +4,31 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/73334647-ad51-42a9-b07b-93298cc2a8e1/36cf59b2-336a-41d0-92de-e9137dcc0364/ID-en-20230605-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  font-weight: 500;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 50%;
+  z-index: -1;
+}
+
+body::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent);
+}
+
+body::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
 }
 
 /* :root {
