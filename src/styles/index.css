@@ -9,6 +9,7 @@ body {
   background-size: cover;
   position: relative;
   font-weight: 500;
+  color: white;
 }
 
 body::before,
