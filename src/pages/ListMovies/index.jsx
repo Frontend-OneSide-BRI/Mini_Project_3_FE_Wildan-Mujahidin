@@ -31,7 +31,7 @@ const ListMovies = () => {
 
   return (
     <div className="w-full h-screen flex flex-col overflow-auto">
-      <div className="h-full w-full  overflow-auto">
+      <div className="h-full w-full  overflow-auto lg:text-xl">
         <Header />
 
         <div className="flex justify-center gap-5 py-3">
