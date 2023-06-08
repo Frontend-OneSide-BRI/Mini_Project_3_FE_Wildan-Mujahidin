@@ -6,16 +6,6 @@ import { Header, ImageCard } from "../../components/Molekul";
 const ListMovies = () => {
   const dispatch = useDispatch();
   const { movies, loading, error } = useSelector((state) => state.movies);
-  const [hovered, setHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
-
   useEffect(() => {
     dispatch(fetchMovies());
   }, [dispatch]);
