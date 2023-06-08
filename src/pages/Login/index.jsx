@@ -24,11 +24,11 @@ const Login = () => {
       })
       .then((response) => {
         console.log(response.data);
-        localStorage.setItem(
+        sessionStorage.setItem(
           "guest_session_id",
           response.data.guest_session_id
         );
-        localStorage.setItem("email", formLogin.email);
+        sessionStorage.setItem("email", formLogin.email);
         Swal.fire({
           title: "Berhasil Login",
           icon: "success",

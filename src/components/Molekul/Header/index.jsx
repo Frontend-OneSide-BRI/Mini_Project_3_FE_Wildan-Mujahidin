@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const user = localStorage.getItem("email");
+  const user = sessionStorage.getItem("email");
 
   const handleLogout = () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("guest_session_id");
+    sessionStorage.removeItem("email");
+    sessionStorage.removeItem("guest_session_id");
     setIsLoggedIn(false);
   };
 
   useEffect(() => {
-    const token = localStorage.getItem("guest_session_id");
+    const token = sessionStorage.getItem("guest_session_id");
     if (token) {
       setIsLoggedIn(true);
     }
