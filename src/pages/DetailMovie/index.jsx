@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { CardDetail } from "../../components/Molekul";
+import { CardDetail, Header } from "../../components/Molekul";
 
 export const DetailMovie = () => {
   const { id_movie } = useParams();
@@ -28,6 +28,9 @@ export const DetailMovie = () => {
         backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`,
       }}
     >
+      <div className="bg-slate-800">
+        <Header />
+      </div>
       <div className="flex justify-center  items-center  p-4 md:p-14 lg:p-28 bg-gradient-to-t from-white  dark:from-black">
         <CardDetail movie={movie} />
       </div>

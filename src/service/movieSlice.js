@@ -47,3 +47,20 @@ export const fetchMovies = () => async (dispatch) => {
     dispatch(fetchMoviesFailure(error.message));
   }
 };
+
+export const fetchFilterMovies = (searchQuery) => async (dispatch) => {
+  try {
+    dispatch(fetchMoviesStart());
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?query=${searchQuery}&include_adult=false&language=en-US&page=1`,
+      {
+        headers: {
+          Authorization: `Bearer ${import.meta.env.VITE_API_READ}`,
+        },
+      }
+    );
+    dispatch(fetchMoviesSuccess(response.data.results));
+  } catch (error) {
+    dispatch(fetchMoviesFailure(error.message));
+  }
+};
