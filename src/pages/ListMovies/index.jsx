@@ -9,16 +9,6 @@ const ListMovies = () => {
   const { movies, loading, error } = useSelector((state) => state.movies);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
   useEffect(() => {
     dispatch(fetchMovies());
   }, []);
