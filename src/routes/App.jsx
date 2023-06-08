@@ -1,5 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Homepage, ListFavorites, ListMovies } from "../pages";
+import {
+  DetailMovie,
+  Homepage,
+  ListFavorites,
+  ListMovies,
+  Login,
+} from "../pages";
 
 function App() {
   const router = createBrowserRouter([
@@ -8,12 +14,20 @@ function App() {
       element: <Homepage />,
     },
     {
-      path: "/movie/:id_movie",
+      path: "/movies",
       element: <ListMovies />,
+    },
+    {
+      path: "/movie/:id_movie",
+      element: <DetailMovie />,
     },
     {
       path: "/favorites",
       element: <ListFavorites />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
     },
   ]);
 
