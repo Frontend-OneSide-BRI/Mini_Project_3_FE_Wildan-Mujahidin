@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchFilterMovies, fetchMovies } from "../../service/movieSlice";
-import { Header, ImageCard, ModalLogin } from "../../components/Molekul";
+import { Header, ImageCard } from "../../components/Molekul";
 import { Button } from "../../components/Atom";
 
 const ListMovies = () => {
