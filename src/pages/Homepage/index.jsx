@@ -1,9 +1,9 @@
 import { Button } from "../../components/Atom";
-import Header from "../../components/Molekul/Header";
+import { Header } from "../../components/Molekul";
 
 const Homepage = () => {
   return (
-    <div className="w-full h-screen flex flex-col overflow-auto text-white">
+    <div className="w-full h-screen flex flex-col overflow-auto">
       <div className="h-full w-full  overflow-auto">
         <Header />
         <div className="px-5 pt-5 pb-3 text-center">

@@ -31,7 +31,6 @@ export const { fetchMoviesStart, fetchMoviesSuccess, fetchMoviesFailure } =
 
 export default moviesSlice.reducer;
 
-// Thunk action creator to fetch movies from the API
 export const fetchMovies = () => async (dispatch) => {
   try {
     dispatch(fetchMoviesStart());
@@ -39,7 +38,7 @@ export const fetchMovies = () => async (dispatch) => {
       "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
       {
         headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZjA1YWQwNGNhYzM2NWE4ZWNmNTk5NjA2YjUxNTUyOCIsInN1YiI6IjYzYjRlMzdhYTkxMTdmMDViMGRhZTljNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.AfOYlNIlsS28bPmjh6_VIu3Ogd-BKpb1t0pYRd2VV_Q`,
+          Authorization: `Bearer ${import.meta.env.VITE_API_READ}`,
         },
       }
     );
